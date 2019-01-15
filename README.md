@@ -1,2 +1,2 @@
 # fifabus
-fifabus
+fifabus info
