@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-4">
+    <h1>Home Team</h1>
+    <hr><br>
+    <form (ngSubmit)="onTeam()" novalidate>
+     <div class="form-group">
+       <label for="name">nombre equipo</label>
+       <input type="text" class="form-control" id="name" placeholder="nombre" [(ngModel)]="name" name="name" required>
+     </div>
+     <!--div class="form-group">
+       <label for="country">pais</label>
+       <input type="country" class="form-control" id="country" placeholder="pais" [(ngModel)]="country" name="country" required>
+     </div-->
+	<div class="form-group">     
+    <label for="contactMethod">Pais</label>
+	    <select 
+	        name="contactMethod" 
+	        id="contactMethod" 
+	        class="form-control"
+	        [(ngModel)]="country">
+	        <option *ngFor="let con of listCountry" [value]="con.name">{{ con.name }}</option>
+	    </select>
+	</div>     
+     <div class="form-group">
+		<label for="flag">bandera</label>
+		<input type="file" class="form-control" id="flag" (change)="onFlagSelected($event)" name="flag" required>     	
+     </div>
+     <div class="form-group">
+		<label for="shield">escudo</label>
+		<input type="file" class="form-control" 
+		id="shield" (change)="onShieldSelected($event)" name="shield" required>     	
+     </div>      
+     <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>

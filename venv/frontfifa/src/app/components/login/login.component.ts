@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user';
 
@@ -8,12 +9,15 @@ import { User } from '../../models/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user: User = new User();
-  constructor(private auth: AuthService) {}
+  username: string;
+  password: string;
+  constructor(private router: Router,
+  			  private auth: AuthService) {}
   onLogin(): void {
-    this.auth.login(this.user)
+    this.auth.login({'username': this.username, 'password': this.password})
     .then((user) => {
       localStorage.setItem('token', user.json().token);
+      this.router.navigate(['/home'])
     })
     .catch((err) => {
       console.log(err);

@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-4">
+    <h1>Players</h1>
+    <hr><br>
+    <form (ngSubmit)="onPlay()" novalidate>
+     <div class="form-group">
+       <label for="nameTeam">nombre equipo</label>
+       <input type="text" class="form-control" id="nameTeam" 
+       placeholder="nombre equipo" [(ngModel)]="nameTeam" name="nameTeam" required>
+     </div>
+     <div class="form-group">
+       <label for="name">nombre</label>
+       <input type="text" class="form-control" id="name" placeholder="nombre" [(ngModel)]="name" name="name" required>
+     </div>
+     <div class="form-group">
+       <label for="last">apellido</label>
+       <input type="text" class="form-control" id="last" 
+       placeholder="last" [(ngModel)]="last" name="last" required>
+     </div>     
+     <div class="form-group">
+       <label for="position">posicion</label>
+       <input type="text" class="form-control" id="position" 
+       placeholder="posicion" [(ngModel)]="position" name="position" required>
+     </div>
+    <div class="form-group">
+       <label for="shirt">camiseta</label>
+       <input type="number" class="form-control" id="shirt" 
+       placeholder="camiseta" [(ngModel)]="shirt" name="shirt" required>
+    </div>
+     <div class="form-group">
+		<label for="photo">foto</label>
+		<input type="file" class="form-control" id="photo" (change)="onPhotoSelected($event)" 
+		name="photo" required>     	
+     </div>
+     <div class="form-group">
+       <label for="date">fecha nacimiento</label>
+       <input type="date" class="form-control" id="date" 
+       placeholder="fecha nacimiento" [(ngModel)]="dateB" name="date" required>
+    </div>              
+	<div class="form-group">     
+    <label for="contactMethod">titular</label>
+	    <select 
+	        name="contactMethod" 
+	        id="contactMethod" 
+	        class="form-control"
+	        [(ngModel)]="titular">
+	        <option *ngFor="let con of listTit" [value]="con.name">{{ con.name }}</option>
+	    </select>
+	</div>     
+     <button type="submit" class="btn btn-default">Submit Player</button>
+    </form>
+    <button class="btn btn-" (click)="onCoach()">coach </button>
+  </div>
+</div>
