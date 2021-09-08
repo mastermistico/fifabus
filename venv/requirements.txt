@@ -16,7 +16,7 @@ Jinja2==2.10
 MarkupSafe==1.1.0
 mongoengine==0.16.3
 passlib==1.7.1
-Pillow==5.4.1
+Pillow==8.3.2
 pip==9.0.1
 pycparser==2.19
 PyJWT==1.7.1
